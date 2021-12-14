@@ -7,6 +7,17 @@ plugins {
     id 'maven-publish'
 }
 
+repositories {
+    mavenCentral()
+    google()
+    jcenter()
+    maven { url "https://jitpack.io" }
+}
+
+group = 'com.github.jitpack'
+version = '1.0'
+
+
 android {
     compileSdk 31
 
@@ -16,8 +27,6 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -35,15 +44,7 @@ android {
     }
 }
 
-repositories {
-    mavenCentral()
-    google()
-    jcenter()
-    maven { url "https://jitpack.io" }
-}
 
-group = 'com.github.jitpack'
-version = '1.0'
 
 dependencies {
 
@@ -79,7 +80,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.github.jitpack'
                 artifactId = 'WS'
-                version = '1.0'
+                version = '3.0'
             }
         }
     }
