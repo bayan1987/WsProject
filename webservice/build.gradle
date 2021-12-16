@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
-    id 'kotlin-kapt'
+//    id 'kotlin-kapt'
     id 'kotlin-android-extensions'
     id 'dagger.hilt.android.plugin'
     id 'maven-publish'
@@ -14,8 +14,8 @@ repositories {
     maven { url "https://jitpack.io" }
 }
 
-group = 'com.github.jitpack'
-version = '1.0'
+group = 'com.ats.wsproject'
+version = '3.2'
 
 
 android {
@@ -57,7 +57,9 @@ dependencies {
 
     //hilt
     implementation "com.google.dagger:hilt-android:$hilt_version"
-    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+    implementation "com.google.dagger:hilt-android-compiler:$hilt_version"
+
+//    kapt "com.google.dagger:hilt-compiler:$hilt_version"
 
 
     //networking
@@ -78,9 +80,18 @@ afterEvaluate {
             // Creates a Maven publication called "release".
             release(MavenPublication) {
                 from components.release
-                groupId = 'com.github.jitpack'
+                groupId = 'com.ats.wsproject'
                 artifactId = 'WS'
-                version = '3.0'
+                version = '3.2'
+            }
+
+            debug(MavenPublication) {
+                // Applies the component for the debug build variant.
+                from components.debug
+
+                groupId = 'com.ats.wsproject'
+                artifactId = 'WS'
+                version = '3.2'
             }
         }
     }
