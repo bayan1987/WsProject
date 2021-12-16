@@ -15,7 +15,7 @@ repositories {
 }
 
 group = 'com.ats.wsproject'
-version = '3.2'
+version = '3.3'
 
 
 android {
@@ -40,7 +40,7 @@ android {
         targetCompatibility JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '11'
     }
 }
 
@@ -82,7 +82,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.ats.wsproject'
                 artifactId = 'WS'
-                version = '3.2'
+                version = '3.3'
             }
 
             debug(MavenPublication) {
@@ -91,7 +91,7 @@ afterEvaluate {
 
                 groupId = 'com.ats.wsproject'
                 artifactId = 'WS'
-                version = '3.2'
+                version = '3.3'
             }
         }
     }
