@@ -14,8 +14,8 @@ repositories {
     maven { url "https://jitpack.io" }
 }
 
-group = 'com.ats.wsproject'
-version = '3.3'
+group = 'com.github.bayan1987'
+version = '3.4'
 
 
 android {
@@ -80,18 +80,18 @@ afterEvaluate {
             // Creates a Maven publication called "release".
             release(MavenPublication) {
                 from components.release
-                groupId = 'com.ats.wsproject'
-                artifactId = 'WS'
-                version = '3.3'
+                groupId = 'com.github.bayan1987'
+                artifactId = 'WsProject'
+                version = '3.4'
             }
 
             debug(MavenPublication) {
                 // Applies the component for the debug build variant.
                 from components.debug
 
-                groupId = 'com.ats.wsproject'
-                artifactId = 'WS'
-                version = '3.3'
+                groupId = 'com.github.bayan1987'
+                artifactId = 'WsProject'
+                version = '3.4'
             }
         }
     }
